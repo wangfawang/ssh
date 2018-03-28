@@ -14,13 +14,13 @@
 	<!-- <context:annotation-config /> <context:component-scan base-package="com.how2java" /> <tx:annotation-driven 
 		transaction-manager="transactionManager" /> -->
 
-	<bean name="productActionBean" scope="prototype" class="com.how2java.action.ProductAction">
-		<property name="productService" ref="productServiceImpl" />
+	<bean name="questionActionBean" scope="prototype" class="com.how2java.action.QuestionAction">
+		<property name="questionService" ref="questionServiceImpl" />
 	</bean>
-	<bean name="productServiceImpl" class="com.how2java.service.impl.ProductServiceImpl">
-		<property name="productDAO" ref="productDAOImpl" />
+	<bean name="questionServiceImpl" class="com.how2java.service.impl.QuestionServiceImpl">
+		<property name="questionDAO" ref="questionDAOImpl" />
 	</bean>
-	<bean name="productDAOImpl" class="com.how2java.dao.impl.ProductDAOImpl">
+	<bean name="questionDAOImpl" class="com.how2java.dao.impl.QuestionDAOImpl">
 		<property name="sessionFactory" ref="sf" />
 	</bean>
 
@@ -29,7 +29,7 @@
 		<!-- <bean name="sf" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"> -->
 		<property name="mappingResources">
 			<list>
-				<value>com/how2java/pojo/Product.hbm.xml</value>
+				<value>com/how2java/pojo/Question.hbm.xml</value>
 			</list>
 		</property>
 		<!-- 注解扫描 <property name="packagesToScan"> <list> <value>com.how2java.*</value> </list> </property> -->
